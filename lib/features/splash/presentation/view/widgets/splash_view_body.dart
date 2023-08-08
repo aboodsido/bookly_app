@@ -1,5 +1,7 @@
+import 'package:bookly_app/features/home/presentation/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../../../../constants.dart';
 
@@ -18,16 +20,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    _animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
 
-    fadeAnimation =
-        Tween<double>(begin: 0, end: 1).animate(_animationController);
+    initFadeAnimation();
 
-    _animationController.forward();
-    fadeAnimation.addListener(() {
-      setState(() {});
-    });
+    navigateToHome();
   }
 
   @override
@@ -52,5 +48,28 @@ class _SplashViewBodyState extends State<SplashViewBody>
         )
       ],
     );
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 3)).then(
+      (_) => Get.to(
+        () => const HomeView(),
+        transition: Transition.fadeIn,
+        duration: const Duration(milliseconds: 350),
+      ),
+    );
+  }
+
+  void initFadeAnimation() {
+    _animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+
+    fadeAnimation =
+        Tween<double>(begin: 0, end: 1).animate(_animationController);
+
+    _animationController.forward();
+    fadeAnimation.addListener(() {
+      setState(() {});
+    });
   }
 }
