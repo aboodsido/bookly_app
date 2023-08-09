@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../constants.dart';
+import '../../../../../core/constants.dart';
 import 'circle_play_icon.dart';
 
 class BookListviewItem extends StatelessWidget {
@@ -21,7 +21,7 @@ class BookListviewItem extends StatelessWidget {
             image: AssetImage(AssetData.posterImage),
           ),
           borderRadius: const BorderRadius.all(
-            Radius.circular(20),
+            Radius.circular(16),
           ),
         ),
         child: const CirclePlayIcon(),

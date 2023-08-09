@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/utils/styles.dart';
 import 'books_listview.dart';
 import 'custom_appbar.dart';
 
@@ -12,11 +13,16 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 20, top: 40),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const CustomAppBar(),
           SizedBox(height: 20.h),
           const BooksListView(),
-          SizedBox(height: 20.h),
+          SizedBox(height: 30.h),
+          const Text(
+            'Best Seller',
+            style: Styles.titleMeduim,
+          )
         ],
       ),
     );

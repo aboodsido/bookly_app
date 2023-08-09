@@ -22,10 +22,7 @@ class CirclePlayIcon extends StatelessWidget {
               width: 35.w,
               height: 35.h,
               color: Colors.transparent,
-              child: const Icon(
-                FontAwesomeIcons.play,
-                size: 10,
-              ),
+              child: const Icon(FontAwesomeIcons.play, size: 10),
             ),
           ),
         ),
