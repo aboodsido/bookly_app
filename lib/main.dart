@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'constants.dart';
@@ -13,13 +14,20 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: kBackgroundColor,
-      ),
-      title: 'Bookly App',
-      debugShowCheckedModeBanner: false,
-      home: const SplashView(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return GetMaterialApp(
+          theme: ThemeData.dark().copyWith(
+            scaffoldBackgroundColor: kBackgroundColor,
+          ),
+          title: 'Bookly App',
+          debugShowCheckedModeBanner: false,
+          home: const SplashView(),
+        );
+      },
     );
   }
 }

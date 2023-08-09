@@ -14,7 +14,7 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SvgPicture.asset(AssetImageProvider.logoImage),
+          SvgPicture.asset(AssetData.logoImage),
           IconButton(
             onPressed: () {},
             icon: const FaIcon(
