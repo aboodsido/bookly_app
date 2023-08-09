@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/styles.dart';
+import 'best_seller_item.dart';
 import 'books_listview.dart';
 import 'custom_appbar.dart';
 
@@ -19,10 +20,9 @@ class HomeViewBody extends StatelessWidget {
           SizedBox(height: 20.h),
           const BooksListView(),
           SizedBox(height: 30.h),
-          const Text(
-            'Best Seller',
-            style: Styles.titleMeduim,
-          )
+          const Text('Best Seller', style: Styles.titleMeduim),
+          SizedBox(height: 20.h),
+          const BestSellerItem(),
         ],
       ),
     );
