@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'book_listview_item.dart';
+import 'books_listview.dart';
 import 'custom_appbar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -8,13 +9,14 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(left: 20, top: 40),
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, top: 40),
       child: Column(
         children: [
-          CustomAppBar(),
-          SizedBox(height: 20),
-          BookListviewItem(),
+          const CustomAppBar(),
+          SizedBox(height: 20.h),
+          const BooksListView(),
+          SizedBox(height: 20.h),
         ],
       ),
     );

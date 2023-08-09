@@ -11,19 +11,21 @@ class BookListviewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 130.w,
-      height: 190.h,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage(AssetData.posterImage),
+    return Padding(
+      padding: const EdgeInsets.only(right: 18),
+      child: Container(
+        width: 130.w,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage(AssetData.posterImage),
+          ),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(20),
+          ),
         ),
-        borderRadius: const BorderRadius.all(
-          Radius.circular(20),
-        ),
+        child: const CirclePlayIcon(),
       ),
-      child: const CirclePlayIcon(),
     );
   }
 }
