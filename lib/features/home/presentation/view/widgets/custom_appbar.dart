@@ -20,7 +20,9 @@ class CustomAppBar extends StatelessWidget {
       leading: Padding(
         padding: const EdgeInsets.only(left: 20),
         child: GestureDetector(
-            onTap: scrollUp, child: SvgPicture.asset(AssetData.logoImage)),
+          onTap: scrollUp,
+          child: SvgPicture.asset(AssetData.logoImage),
+        ),
       ),
       elevation: 0,
       leadingWidth: 80.w,
