@@ -18,7 +18,7 @@ class PriceRatingSection extends StatelessWidget {
         Row(
           children: [
             const Icon(
-              Icons.star,
+              Icons.star_rounded,
               color: Colors.yellow,
             ),
             SizedBox(width: 4.sp),

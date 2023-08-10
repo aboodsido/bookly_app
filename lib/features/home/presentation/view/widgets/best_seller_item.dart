@@ -10,46 +10,50 @@ class BestSellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          width: 70.w,
-          height: 110.h,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage(AssetData.posterImage),
-            ),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(16),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 70.w,
+            height: 110.h,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(AssetData.posterImage),
+              ),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(10),
+              ),
             ),
           ),
-        ),
-        SizedBox(width: 20.w),
-        SizedBox(
-          width: MediaQuery.of(context).size.width * 0.6,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Harry Potter and the Goblet of Fire ',
-                maxLines: 2,
-                softWrap: true,
-                overflow: TextOverflow.ellipsis,
-                style: Styles.titleLarge,
-              ),
-              SizedBox(height: 5.w),
-              Text(
-                'J.K. Rowling',
-                style: TextStyle(color: Colors.grey, fontSize: 14.sp),
-              ),
-              SizedBox(height: 05.w),
-              const PriceRatingSection()
-            ],
+          SizedBox(width: 30.w),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.55,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Harry Potter and the Goblet of Fire ',
+                  maxLines: 2,
+                  softWrap: true,
+                  overflow: TextOverflow.ellipsis,
+                  style: Styles.titleLarge20,
+                ),
+                SizedBox(height: 5.w),
+                Text(
+                  'J.K. Rowling',
+                  style:
+                      TextStyle(color: Colors.grey.shade400, fontSize: 14.sp),
+                ),
+                SizedBox(height: 05.w),
+                const PriceRatingSection()
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
