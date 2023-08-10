@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/constants.dart';
+import '../../../../../../core/constants.dart';
 import 'circle_play_icon.dart';
 
 class BookListviewItem extends StatelessWidget {
