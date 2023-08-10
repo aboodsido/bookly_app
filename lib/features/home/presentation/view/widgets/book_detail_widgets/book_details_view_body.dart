@@ -10,13 +10,11 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
       child: Column(
         children: [
           const CustomBookDetailAppbar(),
-          SizedBox(
-            height: 30.h,
-          ),
+          SizedBox(height: 30.h),
           const BookImageAndTitle(),
         ],
       ),

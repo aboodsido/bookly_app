@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../core/constants.dart';
 import '../../../../../../core/utils/styles.dart';
 import '../book_rating.dart';
+import 'book_image.dart';
 
 class BookImageAndTitle extends StatelessWidget {
   const BookImageAndTitle({super.key});
@@ -12,33 +12,23 @@ class BookImageAndTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          width: 160.w,
-          height: 230.h,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage(AssetData.posterImage),
-            ),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(16),
-            ),
-          ),
-        ),
+        const BookImage(),
         SizedBox(height: 40.h),
         const Text(
-          'Harry Potter and the Goblet of Fire ',
+          'Walk Alone',
           textAlign: TextAlign.center,
           maxLines: 2,
           softWrap: true,
           overflow: TextOverflow.ellipsis,
           style: Styles.titleLarge30,
         ),
-        SizedBox(height: 4.h),
+        SizedBox(height: 5.h),
         Text(
           'Rudyard Kipling',
           textAlign: TextAlign.center,
-          style: Styles.titleMeduim.copyWith(color: const Color(0xff707070)),
+          style: Styles.titleMeduim.copyWith(
+              color: Colors.white.withOpacity(0.7),
+              fontStyle: FontStyle.italic),
         ),
         SizedBox(height: 14.h),
         const BookRating(),
