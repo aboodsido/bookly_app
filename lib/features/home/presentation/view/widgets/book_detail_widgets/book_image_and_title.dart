@@ -13,7 +13,7 @@ class BookImageAndTitle extends StatelessWidget {
     return Column(
       children: [
         const BookImage(),
-        SizedBox(height: 40.h),
+        SizedBox(height: 30.h),
         const Text(
           'Walk Alone Forever',
           textAlign: TextAlign.center,

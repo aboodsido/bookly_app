@@ -8,8 +8,9 @@ class BooksListViewInBookDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 110.h,
+    return Container(
+      padding: const EdgeInsets.only(left: 30),
+      height: 120.h,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemCount: 10,

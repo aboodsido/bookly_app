@@ -13,7 +13,7 @@ class BookListviewItemInBookDetail extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 16),
       child: Container(
-        width: 70.w,
+        width: 80.w,
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
