@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'book_detail_button.dart';
 import 'book_image_and_title.dart';
 import 'custom_book_detail_appbar.dart';
 
@@ -16,6 +17,8 @@ class BookDetailsViewBody extends StatelessWidget {
           const CustomBookDetailAppbar(),
           SizedBox(height: 30.h),
           const BookImageAndTitle(),
+          SizedBox(height: 30.h),
+          const BookDetailButton()
         ],
       ),
     );

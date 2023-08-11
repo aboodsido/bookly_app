@@ -27,6 +27,7 @@ class BookImageAndTitle extends StatelessWidget {
           'Rudyard Kipling',
           textAlign: TextAlign.center,
           style: Styles.titleMeduim.copyWith(
+              fontSize: 16.sp,
               color: Colors.white.withOpacity(0.7),
               fontStyle: FontStyle.italic),
         ),
