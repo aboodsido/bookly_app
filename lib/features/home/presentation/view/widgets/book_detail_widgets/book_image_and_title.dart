@@ -15,7 +15,7 @@ class BookImageAndTitle extends StatelessWidget {
         const BookImage(),
         SizedBox(height: 40.h),
         const Text(
-          'Walk Alone',
+          'Walk Alone Forever',
           textAlign: TextAlign.center,
           maxLines: 2,
           softWrap: true,

@@ -8,7 +8,7 @@ class BookDetailButton extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.sizeOf(context).width;
     return SizedBox(
-      width: width * 0.72,
+      width: width * 0.73,
       height: 48.h,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
