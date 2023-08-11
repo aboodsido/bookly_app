@@ -1,10 +1,11 @@
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/constants.dart';
-
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -29,7 +30,9 @@ class CustomAppBar extends StatelessWidget {
       leadingWidth: 80.w,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.kSearchRoute);
+          },
           icon: const FaIcon(
             FontAwesomeIcons.magnifyingGlass,
             size: 20,
