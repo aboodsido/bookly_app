@@ -7,7 +7,10 @@ import 'circle_play_icon.dart';
 class BookListviewItem extends StatelessWidget {
   const BookListviewItem({
     super.key,
+    required this.imgUrl,
   });
+
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class BookListviewItem extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(AssetData.posterImage),
+            image: NetworkImage(imgUrl),
           ),
           borderRadius: const BorderRadius.all(
             Radius.circular(16),

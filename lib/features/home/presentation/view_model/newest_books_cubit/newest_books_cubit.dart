@@ -19,7 +19,7 @@ class NewestBooksCubit extends Cubit<NewestBooksState> {
     Either<Failure, List<BookModel>> result = await homeRepo.fetchNewestBooks();
 
     result.fold(
-      (failure) => ServerFailure(failure.errMessage),
+      (failure) => emit(NewestBooksFailure(failure.errMessage)),
       (books) => emit(NewestBooksSuccess(books)),
     );
   }
