@@ -28,7 +28,7 @@ class HomeViewBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BooksListView(),
+                  const FeaturedBooksListView(),
                   SizedBox(height: 30.h),
                   const Text('Best Seller', style: Styles.titleMeduim),
                 ],
