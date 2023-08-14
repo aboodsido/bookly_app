@@ -28,7 +28,11 @@ class BookDetailsViewBody extends StatelessWidget {
                 bookModel: bookModel,
               )),
               SizedBox(height: 30.h),
-              const Center(child: BookDetailButton()),
+              Center(
+                child: BookDetailButton(
+                  bookModel: bookModel,
+                ),
+              ),
               Expanded(child: SizedBox(height: 30.h)),
               Padding(
                 padding: const EdgeInsets.only(left: 30),

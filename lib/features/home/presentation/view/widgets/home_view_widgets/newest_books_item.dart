@@ -7,8 +7,8 @@ import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/styles.dart';
 import 'price_rating_section.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({
+class NewestBooksItem extends StatelessWidget {
+  const NewestBooksItem({
     super.key,
     required this.bookModel,
   });

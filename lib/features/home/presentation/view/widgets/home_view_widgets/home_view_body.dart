@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/utils/styles.dart';
-import 'best_seller_listview.dart';
+import 'newest_books_listview.dart';
 import 'books_listview.dart';
 import 'custom_appbar.dart';
 
@@ -38,7 +38,7 @@ class HomeViewBody extends StatelessWidget {
           const SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.only(left: 30),
-              child: BestSellerListView(),
+              child: NewestBooksListView(),
             ),
           ),
         ],

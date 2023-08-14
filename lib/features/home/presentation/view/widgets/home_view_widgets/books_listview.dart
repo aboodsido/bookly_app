@@ -3,7 +3,9 @@ import 'package:bookly_app/features/home/presentation/view_model/featured_books_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/widgets/custom_loading_indicator.dart';
 import 'book_listview_item.dart';
 
@@ -20,9 +22,17 @@ class FeaturedBooksListView extends StatelessWidget {
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               itemCount: state.books.length,
-              itemBuilder: (context, index) => BookListviewItem(
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () => GoRouter.of(context).push(
+                  AppRouter.kBookDetailRoute,
+                  extra: state.books[index],
+                ),
+                child: BookListviewItem(
                   imgUrl:
-                      state.books[index].volumeInfo!.imageLinks!.thumbnail!),
+                      state.books[index].volumeInfo!.imageLinks?.thumbnail ??
+                          '',
+                ),
+              ),
               scrollDirection: Axis.horizontal,
             ),
           );

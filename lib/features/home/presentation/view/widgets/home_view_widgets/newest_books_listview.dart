@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../core/widgets/custom_loading_indicator.dart';
-import 'best_seller_item.dart';
+import 'newest_books_item.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+class NewestBooksListView extends StatelessWidget {
+  const NewestBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class BestSellerListView extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemCount: state.books.length,
-            itemBuilder: (context, index) => BestSellerItem(
+            itemBuilder: (context, index) => NewestBooksItem(
               bookModel: state.books[index],
             ),
           );
