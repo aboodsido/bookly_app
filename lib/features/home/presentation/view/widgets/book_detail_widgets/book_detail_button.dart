@@ -26,7 +26,7 @@ class BookDetailButton extends StatelessWidget {
                 ),
               ),
               child: Text(
-                '19.99 €',
+                'Free',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,

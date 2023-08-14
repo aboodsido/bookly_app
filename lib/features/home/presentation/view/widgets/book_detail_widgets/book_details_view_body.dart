@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../data/models/book_model/book_model.dart';
 import 'book_detail_button.dart';
 import 'book_image_and_title.dart';
-import 'books_listview_in_book_detail.dart';
+import 'similar_books_listview.dart';
 import 'custom_book_detail_appbar.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({super.key, required this.bookModel});
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,10 @@ class BookDetailsViewBody extends StatelessWidget {
             children: [
               const CustomBookDetailAppbar(),
               SizedBox(height: 10.h),
-              const BookImageAndTitle(),
+              Center(
+                  child: BookImageAndTitle(
+                bookModel: bookModel,
+              )),
               SizedBox(height: 30.h),
               const Center(child: BookDetailButton()),
               Expanded(child: SizedBox(height: 30.h)),
@@ -31,7 +37,7 @@ class BookDetailsViewBody extends StatelessWidget {
                         fontSize: 14.sp, fontWeight: FontWeight.w600)),
               ),
               SizedBox(height: 10.h),
-              const BooksListViewInBookDetail(),
+              const SimilarBooksListView(),
               SizedBox(height: 20.h),
             ],
           ),

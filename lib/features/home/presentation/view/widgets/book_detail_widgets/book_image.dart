@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../core/constants.dart';
-
 class BookImage extends StatelessWidget {
   const BookImage({
     super.key,
+    required this.imgUrl,
   });
+
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class BookImage extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage(AssetData.posterImage),
+          image: NetworkImage(imgUrl),
         ),
         borderRadius: const BorderRadius.all(
           Radius.circular(16),

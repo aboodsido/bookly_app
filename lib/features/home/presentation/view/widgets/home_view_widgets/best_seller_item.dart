@@ -18,7 +18,10 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailRoute),
+      onTap: () => GoRouter.of(context).push(
+        AppRouter.kBookDetailRoute,
+        extra: bookModel,
+      ),
       child: Padding(
         padding: const EdgeInsets.only(bottom: 20),
         child: Row(

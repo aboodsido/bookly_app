@@ -3,10 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/constants.dart';
 
-class BookListviewItemInBookDetail extends StatelessWidget {
-  const BookListviewItemInBookDetail({
-    super.key,
+class SimilarBookListviewItem extends StatelessWidget {
+  const SimilarBookListviewItem({
+    super.key, required this.imgUrl,
   });
+
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class BookListviewItemInBookDetail extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(AssetData.posterImage),
+            image: NetworkImage(imgUrl),
           ),
           borderRadius: const BorderRadius.all(
             Radius.circular(16),
