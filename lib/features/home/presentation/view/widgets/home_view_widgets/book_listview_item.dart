@@ -1,8 +1,7 @@
+import 'package:bookly_app/features/home/presentation/view/widgets/home_view_widgets/circle_play_icon.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../../core/constants.dart';
-import 'circle_play_icon.dart';
 
 class BookListviewItem extends StatelessWidget {
   const BookListviewItem({
@@ -16,18 +15,30 @@ class BookListviewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 16),
-      child: Container(
-        width: 130.w,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: NetworkImage(imgUrl),
+      child: Stack(
+        children: [
+          SizedBox(
+            width: 130.w,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(16)),
+              child: CachedNetworkImage(
+                imageUrl: imgUrl,
+                fit: BoxFit.cover,
+                errorWidget: (context, url, error) => const Center(
+                  child: Icon(
+                    Icons.warning,
+                    color: Colors.red,
+                  ),
+                ),
+              ),
+            ),
           ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(16),
-          ),
-        ),
-        child: const CirclePlayIcon(),
+          const Positioned(
+            bottom: 10,
+            right: 10,
+            child: CirclePlayIcon(),
+          )
+        ],
       ),
     );
   }
