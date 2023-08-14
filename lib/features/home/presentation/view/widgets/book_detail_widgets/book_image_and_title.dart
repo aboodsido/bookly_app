@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/utils/styles.dart';
-import '../book_rating.dart';
 import 'book_image.dart';
 
 class BookImageAndTitle extends StatelessWidget {
@@ -32,7 +31,7 @@ class BookImageAndTitle extends StatelessWidget {
               fontStyle: FontStyle.italic),
         ),
         SizedBox(height: 14.h),
-        const BookRating(),
+        // const BookRating(),
       ],
     );
   }

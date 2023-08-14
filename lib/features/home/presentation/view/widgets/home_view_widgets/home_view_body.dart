@@ -30,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
                 children: [
                   const FeaturedBooksListView(),
                   SizedBox(height: 30.h),
-                  const Text('Best Seller', style: Styles.titleMeduim),
+                  const Text('Newest Books', style: Styles.titleMeduim),
                 ],
               ),
             ),

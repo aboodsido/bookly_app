@@ -1,14 +1,19 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../../core/constants.dart';
 import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/styles.dart';
 import 'price_rating_section.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+  const BestSellerItem({
+    super.key,
+    required this.bookModel,
+  });
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,8 @@ class BestSellerItem extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(AssetData.posterImage),
+                  image: NetworkImage(
+                      bookModel.volumeInfo!.imageLinks!.thumbnail!),
                 ),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(10),
@@ -38,8 +44,8 @@ class BestSellerItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Harry Potter and the Goblet of Fire ',
+                  Text(
+                    bookModel.volumeInfo!.title!,
                     maxLines: 2,
                     softWrap: true,
                     overflow: TextOverflow.ellipsis,
@@ -47,12 +53,15 @@ class BestSellerItem extends StatelessWidget {
                   ),
                   SizedBox(height: 5.w),
                   Text(
-                    'J.K. Rowling',
+                    bookModel.volumeInfo!.authors!.first,
                     style:
                         TextStyle(color: Colors.grey.shade400, fontSize: 14.sp),
                   ),
                   SizedBox(height: 05.w),
-                  const PriceRatingSection()
+                  PriceRatingSection(
+                    ratingCount: bookModel.volumeInfo!.ratingsCount ?? 0,
+                    rating: bookModel.volumeInfo!.averageRating ?? 0,
+                  )
                 ],
               ),
             ),

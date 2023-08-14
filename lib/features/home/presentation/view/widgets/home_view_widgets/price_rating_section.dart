@@ -6,7 +6,12 @@ import '../book_rating.dart';
 class PriceRatingSection extends StatelessWidget {
   const PriceRatingSection({
     super.key,
+    this.rating,
+    required this.ratingCount,
   });
+
+  final dynamic rating;
+  final int ratingCount;
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +19,13 @@ class PriceRatingSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          '19.99 €',
+          'Free',
           style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
         ),
-        const BookRating(),
+        BookRating(
+          ratingCount: ratingCount,
+          rating: rating,
+        ),
       ],
     );
   }
