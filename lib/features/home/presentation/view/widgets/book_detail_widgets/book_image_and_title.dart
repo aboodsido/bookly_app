@@ -18,7 +18,7 @@ class BookImageAndTitle extends StatelessWidget {
       child: Column(
         children: [
           BookImage(
-            imgUrl: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+            imgUrl: bookModel.volumeInfo!.imageLinks?.thumbnail ?? '',
           ),
           SizedBox(height: 30.h),
           Text(
@@ -31,7 +31,7 @@ class BookImageAndTitle extends StatelessWidget {
           ),
           SizedBox(height: 5.h),
           Text(
-            bookModel.volumeInfo!.authors!.first,
+            bookModel.volumeInfo!.authors?.first ?? '',
             textAlign: TextAlign.center,
             style: Styles.titleMeduim.copyWith(
                 fontSize: 16.sp,

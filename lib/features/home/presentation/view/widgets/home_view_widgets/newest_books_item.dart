@@ -34,7 +34,7 @@ class NewestBooksItem extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                      bookModel.volumeInfo!.imageLinks!.thumbnail!),
+                      bookModel.volumeInfo!.imageLinks?.thumbnail ?? ''),
                 ),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(10),
@@ -56,7 +56,7 @@ class NewestBooksItem extends StatelessWidget {
                   ),
                   SizedBox(height: 5.w),
                   Text(
-                    bookModel.volumeInfo!.authors!.first,
+                    bookModel.volumeInfo!.authors?.first ?? '',
                     style:
                         TextStyle(color: Colors.grey.shade400, fontSize: 14.sp),
                   ),
