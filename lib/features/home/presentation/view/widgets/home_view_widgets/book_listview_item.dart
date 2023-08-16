@@ -19,6 +19,7 @@ class BookListviewItem extends StatelessWidget {
         children: [
           SizedBox(
             width: 130.w,
+            height: 190.h,
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(16)),
               child: CachedNetworkImage(

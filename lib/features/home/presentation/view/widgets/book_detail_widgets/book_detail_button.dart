@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../../../core/widgets/custom_snackbar.dart';
+
 class BookDetailButton extends StatelessWidget {
   const BookDetailButton({super.key, required this.bookModel});
 
@@ -34,12 +36,7 @@ class BookDetailButton extends StatelessWidget {
           Expanded(
             child: TextButton(
               onPressed: () async {
-                if (bookModel.accessInfo!.pdf!.isAvailable!) {
-                  final Uri downloadUrl =
-                      Uri.parse(bookModel.accessInfo!.pdf!.acsTokenLink!);
-
-                  await launchDownloadUrl(downloadUrl);
-                } else {}
+                await checkDownloadUrlCorrect(launchDownloadUrl, context);
               },
               style: TextButton.styleFrom(
                 backgroundColor: Colors.white,
@@ -51,7 +48,10 @@ class BookDetailButton extends StatelessWidget {
                 ),
               ),
               child: Text(
-                'Get Free',
+                bookModel.accessInfo!.pdf!.isAvailable! &&
+                        bookModel.accessInfo!.pdf!.acsTokenLink != null
+                    ? 'Get Free'
+                    : 'Not Available',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -85,5 +85,22 @@ class BookDetailButton extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> checkDownloadUrlCorrect(
+      Future<void> Function(dynamic downloadUrl) launchDownloadUrl,
+      BuildContext context) async {
+    if (bookModel.accessInfo!.pdf!.isAvailable!) {
+      if (bookModel.accessInfo!.pdf!.acsTokenLink != null) {
+        final Uri downloadUrl =
+            Uri.parse(bookModel.accessInfo!.pdf!.acsTokenLink!);
+
+        await launchDownloadUrl(downloadUrl);
+      } else {
+        customSnackBar(context, text: 'This book is not available to download');
+      }
+    } else {
+      customSnackBar(context, text: 'This book is not available to download');
+    }
   }
 }
