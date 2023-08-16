@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../data/models/book_model/book_model.dart';
+import '../../../../../../core/models/book_model/book_model.dart';
 import 'book_detail_button.dart';
 import 'book_image_and_title.dart';
 import 'similar_books_listview.dart';

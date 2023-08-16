@@ -1,8 +1,8 @@
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../../../core/models/book_model/book_model.dart';
 import '../../../../../../core/widgets/custom_snackbar.dart';
 
 class BookDetailButton extends StatelessWidget {

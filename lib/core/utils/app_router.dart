@@ -1,5 +1,4 @@
 import 'package:bookly_app/core/utils/service_locator.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/data/repo_impl/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presentation/view_model/similar_books_cubit/similar_books_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +8,7 @@ import '../../features/home/presentation/view/book_details_view.dart';
 import '../../features/home/presentation/view/home_view.dart';
 import '../../features/search/presentation/view/search_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
+import '../models/book_model/book_model.dart';
 
 abstract class AppRouter {
   static const kHomeRoute = '/home';

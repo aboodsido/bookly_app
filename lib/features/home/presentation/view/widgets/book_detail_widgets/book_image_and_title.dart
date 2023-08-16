@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../core/models/book_model/book_model.dart';
 import '../../../../../../core/utils/styles.dart';
-import '../../../../data/models/book_model/book_model.dart';
 import '../book_rating.dart';
 import 'book_image.dart';
 
